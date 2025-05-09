@@ -1,0 +1,15 @@
+<button [disabled]="habilitado"
+  (click)="dispararAlerta()">
+  Disparar Alerta
+</button>
+<br />
+<div *ngIf="habilitado">
+  <input type = "text" 
+    [(ngModel)]="name" />
+  <p>{{name}}</p>
+</div>
+<ul>
+    <li *ngFor="let produto of produtos">
+        {{produto.nome}}
+    </li>
+</ul>

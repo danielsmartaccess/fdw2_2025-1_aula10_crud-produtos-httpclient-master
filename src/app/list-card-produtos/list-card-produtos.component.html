@@ -1,0 +1,16 @@
+<div class="container">
+    <h3>ListCard de Produtos</h3>
+
+    <div class="row">
+        <div class="col col-xl-3 col-lh-4 col-sm-6 col-12" *ngFor="let prod of listaProdutos">
+            <app-card-produto class="p-3">
+                <img titulo src="/imagem.png" alt="produto" class="card-img-top">
+
+                <div conteudo>
+                    <h5 class="card-title">{{prod.nome}}</h5>
+                    <p class="card-text">{{prod.preco | moeda}}</p> 
+                </div>
+            </app-card-produto>
+        </div>
+    </div>
+</div>

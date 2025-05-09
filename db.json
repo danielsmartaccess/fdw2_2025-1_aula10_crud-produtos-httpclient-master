@@ -1,0 +1,11 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Produto Inicial",
+      "preco": 199.99,
+      "marca": "Marca Teste",
+      "dataValidade": "2025-12-31"
+    }
+  ]
+}
