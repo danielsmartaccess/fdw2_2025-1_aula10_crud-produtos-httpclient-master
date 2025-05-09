@@ -1,18 +1,39 @@
 {
   "produtos": [
     {
-      "id": 1,
-      "nome": "Produto Inicial",
-      "preco": 199.99,
-      "marca": "Marca Teste",
-      "dataValidade": "2025-12-31"
-    },
-    {
       "id": "3420",
       "nome": "fgrd",
       "preco": 564,
       "marca": "rt",
       "dataValidade": "2025-05-28"
+    },
+    {
+      "id": "3",
+      "nome": "Notebook Ultrabook",
+      "preco": 3999.99,
+      "marca": "TechPro",
+      "dataValidade": "2026-12-31"
+    },
+    {
+      "id": "4",
+      "nome": "Smartphone Galaxy",
+      "preco": 2499.99,
+      "marca": "Samsung",
+      "dataValidade": "2026-06-30"
+    },
+    {
+      "id": "5",
+      "nome": "Monitor LED 27\"",
+      "preco": 1299.99,
+      "marca": "LG",
+      "dataValidade": "2026-08-15"
+    },
+    {
+      "id": "4eba",
+      "nome": "fff",
+      "preco": 123456,
+      "marca": "ytrew",
+      "dataValidade": "2025-05-07"
     }
   ]
 }
