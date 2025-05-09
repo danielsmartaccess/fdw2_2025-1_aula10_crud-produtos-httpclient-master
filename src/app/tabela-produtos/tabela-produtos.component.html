@@ -1,36 +1,40 @@
-<div class="container">
+<div class="container mt-4">
     <h3>Tabela de Produtos</h3>
-    <div class="mb-3">
-        <label for="nomePesquisa" class="form-label">PESQUISA:</label>
-        <input type="text" [(ngModel)]="nomePesquisa" id="nomePesquisa"
-            class="form-control" placeholder="digite nome para pesquisar ..">
+    <div class="form-group">
+        <label for="nomePesquisa">Pesquisar produto:</label>
+        <input type="text" [(ngModel)]="termoBusca" id="termoBusca" class="form-control">
     </div>
 
-    <h4 *ngIf="(lista | filtroPesquisa:nomePesquisa).length ==0">
-        Não há produtos cadastrados!
+    <h4 *ngIf="(produtos | filtroPesquisa:termoBusca).length == 0">
+        Nenhum produto encontrado!
     </h4>
 
-    <table class="table table-striped" *ngIf="(lista | filtroPesquisa:nomePesquisa).length  > 0">
+    <table class="table table-striped" *ngIf="(produtos | filtroPesquisa:termoBusca).length > 0">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>NOME</th>
-                <th>PRECO</th>
-                <th>MARCA</th>
-                <th>VALIDADE</th>
-                <th>AÇÃO</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Marca</th>
+                <th>Data de Validade</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let produto of (lista | filtroPesquisa:nomePesquisa)">
+            <tr *ngFor="let produto of (produtos | filtroPesquisa:termoBusca)">
                 <td>{{produto.id}}</td>
                 <td>{{produto.nome}}</td>
                 <td>{{produto.preco | moeda}}</td>
-                <td>{{produto.marca | uppercase}}</td>
-                <td>{{produto.dataValidade | date:"dd/MM/yyyy"}}</td>
-                <td><a class="btn btn-primary" routerLink="/edit/{{produto.id}}">Editar</a></td>
-                <td><a class="btn btn-primary" routerLink="/tabela" (click)="deletar(produto.id)">Deletar</a></td>
+                <td>{{produto.marca}}</td>
+                <td>{{produto.dataValidade | date:'dd/MM/yyyy'}}</td>
+                <td>
+                    <a class="btn btn-warning me-2" [routerLink]="['/produtos/editar', produto.id]">Editar</a>
+                    <a class="btn btn-danger" routerLink="/tabela" (click)="excluirProduto(produto.id)">Deletar</a>
+                </td>
             </tr>
         </tbody>
     </table>
+    <div class="mt-3">
+        <a class="btn btn-primary" routerLink="/produtos/novo">Novo Produto</a>
+    </div>
 </div>

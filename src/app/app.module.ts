@@ -18,8 +18,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent,
     TestComponentComponent,
-    MoedaPipe,
-    FiltroPesquisaPipe,
     PageNotFoundComponent
   ],
   imports: [
@@ -30,7 +28,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     TabelaProdutosComponent,
     FormProdutosComponent,
     CardProdutoComponent,
-    ListCardProdutosComponent
+    ListCardProdutosComponent,
+    MoedaPipe,
+    FiltroPesquisaPipe
   ],
   providers: [],
   bootstrap: [AppComponent]

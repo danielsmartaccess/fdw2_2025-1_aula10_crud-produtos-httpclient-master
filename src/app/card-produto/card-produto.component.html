@@ -1,6 +1,13 @@
-<div class="card">
-    <ng-content select="[titulo]"></ng-content>
+<div class="card mb-4">
+    <img [src]="'assets/' + (produto.imagem || 'placeholder.jpg')" class="card-img-top" alt="{{produto.nome}}">
     <div class="card-body">
-        <ng-content select="[conteudo]"></ng-content>
+        <h5 class="card-title">{{produto.nome}}</h5>
+        <p class="card-text">{{produto.preco | moeda}}</p>
+        <p class="card-text">{{produto.marca}}</p>
+        <p class="card-text">{{produto.dataValidade | date:'dd/MM/yyyy'}}</p>
+        <div class="btn-group">
+            <a [routerLink]="['/produtos/editar', produto.id]" class="btn btn-warning me-2">Editar</a>
+            <button (click)="excluir()" class="btn btn-danger">Excluir</button>
+        </div>
     </div>
 </div>

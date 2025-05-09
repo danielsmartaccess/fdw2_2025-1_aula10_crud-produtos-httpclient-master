@@ -35,8 +35,8 @@ export class TabelaProdutosComponent implements OnInit {
     );
   }
 
-  excluirProduto(id: number): void {
-    if (confirm('Tem certeza que deseja excluir este produto?')) {
+  excluirProduto(id: number | undefined): void {
+    if (id && confirm('Tem certeza que deseja excluir este produto?')) {
       this.produtoService.deleteProduto(id).subscribe(
         () => {
           this.carregarProdutos();

@@ -4,4 +4,5 @@ export class Produto {
     preco?: number;
     marca?: string;
     dataValidade?: Date;
+    imagem?: string;
 }

@@ -1,16 +1,12 @@
-<div class="container">
+<div class="container mt-4">
     <h3>ListCard de Produtos</h3>
 
     <div class="row">
-        <div class="col col-xl-3 col-lh-4 col-sm-6 col-12" *ngFor="let prod of listaProdutos">
-            <app-card-produto class="p-3">
-                <img titulo src="/imagem.png" alt="produto" class="card-img-top">
-
-                <div conteudo>
-                    <h5 class="card-title">{{prod.nome}}</h5>
-                    <p class="card-text">{{prod.preco | moeda}}</p> 
-                </div>
-            </app-card-produto>
+        <div class="col-12 mb-3">
+            <input type="text" [(ngModel)]="termoBusca" class="form-control" placeholder="Pesquisar produtos...">
+        </div>
+        <div class="col-xl-3 col-lh-4 col-sm-6 col-12" *ngFor="let prod of produtos | filtroPesquisa:termoBusca">
+            <app-card-produto [produto]="prod" (onDelete)="excluirProduto($event)"></app-card-produto>
         </div>
     </div>
 </div>
